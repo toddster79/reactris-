@@ -5,7 +5,6 @@ import { UserForm } from './components/login-form/UserForm'
 const App = () => (
   <div className="App"> 
     <UserForm />
-    
   </div>
 );
 
