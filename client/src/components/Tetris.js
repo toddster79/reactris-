@@ -1,4 +1,7 @@
-import React, { useState } from 'react';
+import React, { useState } from 'react'; 
+
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
+import AppBar from 'material-ui/AppBar'
 
 import { createStage, checkCollision } from '../gameHelpers';
 import { StyledTetrisWrapper, StyledTetris } from './styles/StyledTetris';
@@ -106,8 +109,10 @@ const Tetris = () => {
       tabIndex="0"
       onKeyDown={e => move(e)}
       onKeyUp={keyUp}
-    >
-      <StyledTetris>
+    > 
+     <MuiThemeProvider> 
+     <AppBar title="REACTRIS" />
+      <StyledTetris> 
         <Stage stage={stage} />
         <aside>
           {gameOver ? (
@@ -122,6 +127,7 @@ const Tetris = () => {
           <StartButton callback={startGame} />
         </aside>
       </StyledTetris>
+      </MuiThemeProvider> 
     </StyledTetrisWrapper>
   );
 };
