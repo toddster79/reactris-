@@ -3,6 +3,7 @@ import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
 import AppBar from 'material-ui/AppBar'
 import { List, ListItem } from 'material-ui/List'
 import RaisedButton from 'material-ui/RaisedButton'
+import { Grid } from '@material-ui/core'
 
 export class UserPersonalDetails extends Component {
     continue = e => {
@@ -21,7 +22,13 @@ export class UserPersonalDetails extends Component {
         return (
             <MuiThemeProvider>
                 <React.Fragment>
-                    <AppBar title="Confirm User Info" /> 
+                    <AppBar title="Confirm Player Info" /> 
+                    <Grid
+                    container
+                    direction="column"
+                    justify="center"
+                    alignItems="center"
+                    >
                     <List>
                         <ListItem 
                             primaryText="First Name"
@@ -59,7 +66,8 @@ export class UserPersonalDetails extends Component {
                         primary={false}
                         style={styles.button}
                         onClick={this.back}
-                    />
+                    /> 
+                    </Grid>
                 </React.Fragment>
             </MuiThemeProvider>
         )

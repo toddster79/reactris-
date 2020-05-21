@@ -3,6 +3,7 @@ import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
 import AppBar from 'material-ui/AppBar'
 import TextField from 'material-ui/TextField'
 import RaisedButton from 'material-ui/RaisedButton'
+import { Grid } from '@material-ui/core'
 
 export class UserPersonalDetails extends Component {
     continue = e => {
@@ -20,7 +21,13 @@ export class UserPersonalDetails extends Component {
         return (
             <MuiThemeProvider>
                 <React.Fragment>
-                    <AppBar title="Enter Personal Details" />
+                    <AppBar title="Enter Player Details" /> 
+                    <Grid
+                    container
+                    direction="column"
+                    justify="center"
+                    alignItems="center"
+                    >
                     <TextField 
                         hintText="Enter Your Occupation"
                         floatingLabelText="Occupation"
@@ -53,7 +60,8 @@ export class UserPersonalDetails extends Component {
                         primary={false}
                         style={styles.button}
                         onClick={this.back}
-                    />
+                    /> 
+                    </Grid> 
                 </React.Fragment>
             </MuiThemeProvider>
         )
