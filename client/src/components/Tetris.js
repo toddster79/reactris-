@@ -4,7 +4,9 @@ import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
 import AppBar from 'material-ui/AppBar'
 
 import { createStage, checkCollision } from '../gameHelpers';
-import { StyledTetrisWrapper, StyledTetris } from './styles/StyledTetris';
+import { StyledTetrisWrapper, StyledTetris } from './styles/StyledTetris';  
+
+import ReactHowler from 'react-howler'
 
 // Custom Hooks
 import { useInterval } from '../hooks/useInterval';
@@ -27,7 +29,10 @@ const Tetris = () => {
     rowsCleared
   );
 
-  console.log('re-render');
+  console.log('re-render'); 
+
+  
+
 
   const movePlayer = dir => {
     if (!checkCollision(player, stage, { x: dir, y: 0 })) {
@@ -42,7 +47,7 @@ const Tetris = () => {
         setDropTime(1000 / (level + 1));
       }
     }
-  };
+  }; 
 
   const startGame = () => {
     // Reset everything
@@ -53,6 +58,7 @@ const Tetris = () => {
     setLevel(0);
     setRows(0);
     setGameOver(false);
+   
   };
 
   const drop = () => {
@@ -77,14 +83,13 @@ const Tetris = () => {
   };
 
   const dropPlayer = () => {
-    // We don't need to run the interval when we use the arrow down to
+    // Don't need to run the interval when we use the arrow down to
     // move the tetromino downwards. So deactivate it for now.
     setDropTime(null);
     drop();
   };
 
   // This one starts the game
-  // Custom hook by Dan Abramov
   useInterval(() => {
     drop();
   }, dropTime);
@@ -113,6 +118,10 @@ const Tetris = () => {
      <MuiThemeProvider> 
      <AppBar title="REACTRIS" />
       <StyledTetris> 
+      <ReactHowler
+        src='https://ia800504.us.archive.org/33/items/TetrisThemeMusic/Tetris.mp3'
+        playing={true}
+      />
         <Stage stage={stage} />
         <aside>
           {gameOver ? (
