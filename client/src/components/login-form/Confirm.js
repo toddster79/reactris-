@@ -3,12 +3,13 @@ import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
 import AppBar from 'material-ui/AppBar'
 import { List, ListItem } from 'material-ui/List'
 import RaisedButton from 'material-ui/RaisedButton'
-import { Grid } from '@material-ui/core'
+import { Grid } from '@material-ui/core' 
+import { StyledLoginForm } from '../styles/StyledLoginForm';
 
 export class UserPersonalDetails extends Component {
     continue = e => {
         e.preventDefault() 
-        // Process Form
+        // Process Form   
         this.props.nextStep()
     } 
 
@@ -21,14 +22,15 @@ export class UserPersonalDetails extends Component {
         const { values: { firstName, lastName, email, occupation, city, bio } } = this.props 
         return (
             <MuiThemeProvider>
-                <React.Fragment>
-                    <AppBar title="Confirm Player Info" /> 
+                <React.Fragment> 
+                    <AppBar title="REACTRIS: Confirm Info" /> 
+                    <StyledLoginForm>
                     <Grid
                     container
                     direction="column"
                     justify="center"
-                    alignItems="center"
-                    >
+                    alignItems="center" 
+                    > 
                     <List>
                         <ListItem 
                             primaryText="First Name"
@@ -66,8 +68,9 @@ export class UserPersonalDetails extends Component {
                         primary={false}
                         style={styles.button}
                         onClick={this.back}
-                    /> 
-                    </Grid>
+                    />  
+                    </Grid> 
+                    </StyledLoginForm>
                 </React.Fragment>
             </MuiThemeProvider>
         )
@@ -79,6 +82,8 @@ export class UserPersonalDetails extends Component {
             margin: 15
         }
     }  
+
+
 
 
 

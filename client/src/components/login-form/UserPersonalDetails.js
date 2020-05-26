@@ -4,6 +4,7 @@ import AppBar from 'material-ui/AppBar'
 import TextField from 'material-ui/TextField'
 import RaisedButton from 'material-ui/RaisedButton'
 import { Grid } from '@material-ui/core'
+import { StyledLoginForm } from '../styles/StyledLoginForm';
 
 export class UserPersonalDetails extends Component {
     continue = e => {
@@ -21,7 +22,8 @@ export class UserPersonalDetails extends Component {
         return (
             <MuiThemeProvider>
                 <React.Fragment>
-                    <AppBar title="Enter Player Details" /> 
+                    <AppBar title="REACTRIS: Personal Details" /> 
+                    <StyledLoginForm>
                     <Grid
                     container
                     direction="column"
@@ -62,6 +64,7 @@ export class UserPersonalDetails extends Component {
                         onClick={this.back}
                     /> 
                     </Grid> 
+                    </StyledLoginForm>
                 </React.Fragment>
             </MuiThemeProvider>
         )
