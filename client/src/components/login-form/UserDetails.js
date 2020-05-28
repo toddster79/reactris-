@@ -1,9 +1,11 @@
-import React, {Component } from 'react'
+import React, { Component } from 'react'
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
 import AppBar from 'material-ui/AppBar'
 import TextField from 'material-ui/TextField'
 import RaisedButton from 'material-ui/RaisedButton'
 import { Grid } from '@material-ui/core'
+import { StyledLoginForm } from '../styles/StyledLoginForm';
+
 
 export class UserDetails extends Component {
     continue = e => {
@@ -15,7 +17,8 @@ export class UserDetails extends Component {
         return (
             <MuiThemeProvider> 
                 <React.Fragment> 
-                <AppBar title="Enter Player Details" />
+                <AppBar title="REACTRIS: Player Details" />
+                <StyledLoginForm>
                     <Grid
                     container
                     direction="column"
@@ -41,7 +44,7 @@ export class UserDetails extends Component {
                     <TextField 
                         hintText="Enter Your Email"
                         floatingLabelText="Email"
-                        onChange={handleChange('email')}
+                        onChange={handleChange('email')}    
                         defaultValue={values.email}
                         margin="normal"
                     />  
@@ -53,6 +56,7 @@ export class UserDetails extends Component {
                         onClick={this.continue}
                     />
                     </Grid>
+                    </StyledLoginForm>
                 </React.Fragment>
             </MuiThemeProvider>
         )
@@ -63,6 +67,7 @@ export class UserDetails extends Component {
         button: {
             margin: 15
         }
-}
+} 
+
  
 export default UserDetails

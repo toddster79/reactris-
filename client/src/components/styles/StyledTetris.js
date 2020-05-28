@@ -1,11 +1,11 @@
 import styled from 'styled-components';
-// BG Image
-//import bgImage from '../../img/28C0D4.png';
+//BG Image
+import bgImage from '../../img/tetris.png';
 
-export const StyledTetrisWrapper = styled.div`
+export const StyledTetrisWrapper = styled.div`   
   width: 100vw;
   height: 100vh;
-  
+  background: url(${bgImage}) #000;
   background-size: cover;
   overflow: hidden;
 `;
@@ -15,7 +15,8 @@ export const StyledTetris = styled.div`
   align-items: flex-start;
   padding: 40px;
   margin: 0 auto;
-  max-width: 900px;
+  max-width: 900px; 
+  justify-content: center;
   aside {
     width: 100%;
     max-width: 200px;
