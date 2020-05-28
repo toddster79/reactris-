@@ -1,4 +1,4 @@
-import React, {Component } from 'react'
+import React, { Component } from 'react'
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
 import AppBar from 'material-ui/AppBar'
 import TextField from 'material-ui/TextField'
@@ -44,7 +44,7 @@ export class UserDetails extends Component {
                     <TextField 
                         hintText="Enter Your Email"
                         floatingLabelText="Email"
-                        onChange={handleChange('email')}
+                        onChange={handleChange('email')}    
                         defaultValue={values.email}
                         margin="normal"
                     />  
